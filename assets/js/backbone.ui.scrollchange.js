@@ -18,7 +18,8 @@
 			item : "li a",
 			offset: 0,
 			refresh: 100,
-			className: "active"
+			className: "active",
+			direction: "vertical"
 		},
 
 		events : {
