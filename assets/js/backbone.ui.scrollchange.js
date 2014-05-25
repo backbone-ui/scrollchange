@@ -53,9 +53,12 @@
 
 			var min = scroll - .5 * height + this.options.offset;
 			var max = scroll + .5 * height + this.options.offset;
+
 			$(this.options.item).each(function(){
 				var el = $(this).attr("data-target") || $(this).attr("href");
 				// get the position of the item target - use vanilla js instead?
+				//prerequisite
+				if( el.substr(0,1) !== "#" ) return;
 				var pos = $(el).offset().top;
 				if( min <= pos && max > pos ){
 					$(this).parent().addClass( self.options.className );
