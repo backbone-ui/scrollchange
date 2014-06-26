@@ -48,11 +48,11 @@
 			var self = this;
 			// find the items
 			var scroll = $("body").scrollTop();
-			var height = $(window).height();
+			var height = window.innerHeight;
 			// the bounderies of the 'active' area
 
-			var min = scroll - .5 * height + this.options.offset;
-			var max = scroll + .5 * height + this.options.offset;
+			var min = scroll - (.5 * height ) + this.options.offset;
+			var max = scroll + (.5 * height ) + this.options.offset;
 
 			$(this.options.item).each(function(){
 				var el = $(this).attr("data-target") || $(this).attr("href");
@@ -60,6 +60,7 @@
 				//prerequisite
 				if( el.substr(0,1) !== "#" ) return;
 				var pos = $(el).offset().top;
+
 				if( min <= pos && max > pos ){
 					$(this).parent().addClass( self.options.className );
 				} else {
