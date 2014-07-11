@@ -63,6 +63,7 @@
 
 				if( min <= pos && max > pos ){
 					$(this).parent().addClass( self.options.className );
+					$(el).addClass( self.options.className ).siblings().removeClass( self.options.className );
 				} else {
 					$(this).parent().removeClass( self.options.className );
 				}
