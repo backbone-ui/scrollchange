@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+<style>
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+	font-family: sans-serif;
+}
+#menu {
+	position: fixed;
+	top: 50%;
+	right: 0;
+	margin-top: -120px;
+	width: 50px;
+	height: 240px;
+	list-style-type: none;
+}
+#menu li {
+	height: 60px;
+	width: 50px;
+	padding: 10px;
+	text-align: center;
+}
+#menu li a {
+	text-decoration: none;
+	color: #000;
+	font-size: 2rem;
+}
+#menu li.active {
+	background: #fff;
+}
+div.page {
+	width: 100%;
+	height: 100%;
+	padding-top: 60px;
+	-webkit-transition: all 2s; 
+    transition: all 2s;
+}
+h1 {
+	color: #fff;
+	font-size: 50px;
+	text-align: center;
+	padding: 20px 0;
+}
+.table {
+	display: table;
+	width: 100%;
+}
+.table-cell {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	padding: 0 20%;
+}
+.table-cell p {
+	text-align: left;
+	margin-bottom: 20px;
+}
+#one {
+	background: #fff
+}
+#one h1 {
+	color: #fff;
+}
+#two {
+	background: #ff0;
+}
+#two h1 {
+	color: #ff0;
+}
+#three {
+	background: #f0f;
+}
+#three h1 {
+	color: #f0f;
+}
+#four {
+	background: #0ff;
+}
+#four h1 {
+	color: #0ff;
+}
+#one.active, #two.active, #three.active, #four.active {
+	background: #000;
+	color: #fff;
+}
+#one.active h1, #two.active h1, #three.active h1, #four.active h1 {
+	color: #fff;
+}
+.page.active img.animate, .page.visible img.animate {
+	-webkit-animation: spin 14s ease-out infinite 0s;
+	-moz-animation: spin 14s ease-out infinite 0;
+	animation: spin 14s ease-out infinite 0;
+}
+ @-moz-keyframes spin {
+100% {
+-moz-transform: rotate(360deg);
+}
+}
+ @-webkit-keyframes spin {
+100% {
+-webkit-transform: rotate(360deg);
+}
+}
+ @keyframes spin {
+100% {
+-webkit-transform: rotate(360deg);
+transform:rotate(360deg);
+}
+}
+</style>
+</head>
+<body>
+<ul id="menu">
+	<li><a href="#one">1</a></li>
+	<li><a href="#two">2</a></li>
+	<li><a href="#three">3</a></li>
+	<li><a href="#four">4</a></li>
+</ul>
+<div class="page table" id="one">
+	<div class="table-cell">
+		<h1>Showtime</h1>
+		<p>Lorem ipsum dolor sit amizzle, consectetuer adipiscing elit. The bizzle sapizzle velit, fizzle volutpat, suscipit quis, get down get down vizzle, bling bling. Pellentesque that's the shizzle tortizzle. Sizzle erizzle. Nizzle at yo mamma dapibizzle fizzle tempus owned. Mauris pellentesque nibh izzle turpis. Daahng dawg in boofron. Pellentesque eleifend rhoncizzle da bomb. Boom shackalack bow wow wow habitasse platea dictumst. Pimpin' dapibizzle. Go to hizzle tellizzle urna, pretizzle eu, mattizzle ac, shizzle my nizzle crocodizzle vitae, nunc. Yippiyo suscipizzle. Integizzle semper velit sizzle things.Lorem ipsum dolor sit amizzle, consectetuer adipiscing elit. The bizzle sapizzle velit, fizzle volutpat, suscipit quis, get down get down vizzle, bling bling. Pellentesque that's the shizzle tortizzle. Sizzle erizzle. Nizzle at yo mamma dapibizzle fizzle tempus owned. Mauris pellentesque nibh izzle turpis. Daahng dawg in boofron. Pellentesque eleifend rhoncizzle da bomb. Boom shackalack bow wow wow habitasse platea dictumst. Pimpin' dapibizzle. Go to hizzle tellizzle urna, pretizzle eu, mattizzle ac, shizzle my nizzle crocodizzle vitae, nunc. Yippiyo suscipizzle. Integizzle semper velit sizzle things.</p>
+		<img class="animate fr" src="../assets/img/gear.png" width="100" height="100"> </div>
+</div>
+
+<div class="page table" id="two">
+	<div class="table-cell">
+		<h1>Showtime</h1>
+		<p>In sagittis leo fo shizzle nisi. rhoncizzle, away for sure hizzle facilisizzle, sem ma nizzle ass stuff, nizzle fizzle fo shizzle felis a est. Brizzle volutpizzle augue. Bling bling egestas lectus izzle libero. Prizzle fizzle blandizzle its fo rizzle. Rizzle shit, dizzle sit amet black tincidunt, shizzle my nizzle crocodizzle sizzle ultrices sem, ac own yo' shizznit sit boom shackalack dang. Fo shizzle ma nizzle tortizzle vel enim. Brizzle lobortizzle. Bow wow wow lectus mammasay mammasa mamma oo sa, own yo' we gonna chung, aliquizzle dope amizzle, crazy egestizzle, shiznit. Vivamizzle sizzle. Vestibulizzle ante yo mamma primizzle boom shackalack brizzle orci luctizzle daahng dawg ultrices posuere cubilia Curae; Pimpin' check it out elit fo shizzle yo mamma bibendizzle hizzle. Fusce est tortizzle, i'm in the shizzle vel, semper vel, commodo brizzle, tellivizzle. Etizzle ass, tortor break yo neck, yall vehicula dawg, lorizzle fizzle ultricizzle yo mamma, izzle dope mi urna cool erizzle.</p>
+		<img class="animate fr" src="../assets/img/gear.png" width="100" height="100"> </div>
+</div>
+<div class="page table" id="three">
+<div class="table-cell">
+	<h1>Showtime</h1>
+	<p>In cool ligula sure break it down. Ass ullamcorpizzle. Ma nizzle bling bling. Donizzle dizzle break yo neck, yall a eros imperdizzle fo shizzle my nizzle. Dizzle vel ipsizzle. Yo mamma pimpin' est izzle fizzle. Praesent get down get down ipsizzle vitae urna euismizzle fo shizzle my nizzle. nizzle crazy. Vivamizzle pizzle crunk cool felis. Nizzle boom shackalack justo. Etizzle eu dui izzle magna elementum lobortizzle. Morbi boofron, arcu nizzle uhuh ... yih! porta, gangster est boofron nunc, fo shizzle mah nizzle fo rizzle, mah home g-dizzle ornare check out this dolizzle sizzle amet hizzle. Morbi mofo. Vestibulizzle ante yippiyo check out this izzle mammasay mammasa mamma oo sa orci pot izzle ultrices posuere ass Shizzlin dizzle; Vestibulum owned, justo laorizzle break yo neck, yall hendrerizzle, things lorem crackalackin nunc, for sure fermentizzle urna i saw beyonces tizzles and my pizzle went crizzle quis nibh. pretizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle dawg nulla. Phasellizzle fizzle. Cum socizzle izzle penatibus owned magnis go to hizzle parturient montes, yo mamma ridiculizzle shizzle my nizzle crocodizzle. Prizzle sure massa fo shizzle quizzle ultrices congue. Donec nizzle mammasay mammasa mamma oo sa.</p>
+	<img class="animate fr" src="../assets/img/gear.png" width="100" height="100">
+</div>
+</div>
+<div class="page table" id="four">
+<div class="table-cell">
+	<h1>Showtime</h1>
+	<p>Da bomb shizzle my nizzle crocodizzle leo. Phasellus own yo', nulla eu we gonna chung congue, the bizzle erizzle convallizzle quam, crazy elementizzle sapizzle leo vel nulla. Fizzle vestibulizzle shiz felizzle. Etizzle go to hizzle yippiyo magna. Fizzle interdizzle the bizzle leo. urna fo, rhoncizzle a, lacinia doggy, faucibizzle , we gonna chung. Vivamizzle cool euismod bow wow wow. Get down get down tincidunt gravida gangsta. Ghetto izzle tortizzle eget erizzle fizzle pulvinar. Morbi check it out sodales erizzle. Nam egestas, dawg break it down crazy sollicitudin, nisl bow wow wow aliquizzle urna, that's the shizzle elementizzle the bizzle izzle ut velit. Sheezy bow wow wow enizzle gizzle sizzle. Sed dizzle ligula fo shizzle dui euismod euismod. Phasellus cool lorizzle. That's the shizzle velizzle. Suspendisse izzle nibh.</p>
+	<img class="animate fr" src="../assets/img/gear.png" width="100" height="100"> 
+</div>
+</div>
+
+<!-- Dependencies --> 
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/json3/3.2.4/json3.min.js"></script> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script> 
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script> 
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script> 
+
+<!-- Extension lib --> 
+<script src="../assets/js/backbone.ui.scrollchange.js"></script> 
+<script type="text/javascript">
+var view = new Backbone.UI.Scrollchange({
+		el : "#menu"
+		// offset: - window.innerHeight / 2
+});
+view.render();
+</script>
+</body>
+</html>
