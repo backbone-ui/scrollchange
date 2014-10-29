@@ -36,6 +36,7 @@
 		// default options
 		options: {
 			item : "li a",
+			containerEl: window, 
 			offset: 0,
 			refresh: 100,
 			className: "active",
@@ -51,13 +52,15 @@
 		initialize: function(){
 			var self = this;
 			_.bindAll(this, "onScroll", "updateItems");
-			window.addEventListener('scroll', _.bind(this.onScroll, this), false);
+			//window.addEventListener('scroll', _.bind(this.monitorScroll, this), false);
+			$( this.options.containerEl ).on('DOMMouseScroll mousewheel', this.onScroll );
 			// trigger onload
 			this.updateItems();
 			return View.prototype.initialize.apply(this, arguments );
 		},
 
 		onScroll: function() {
+			//console.log("scroll!!");
 			if(this.timer) return;
 			// enable after .1 seconds, update by using a custom 'refresh' option
 			this.timer = setTimeout(this.updateItems, this.options.refresh);
