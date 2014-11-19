@@ -60,17 +60,17 @@
 		},
 
 		onScroll: function() {
-			//console.log("scroll!!");
+			//_.log("scroll!!");
 			if(this.timer) return;
 			// enable after .1 seconds, update by using a custom 'refresh' option
 			this.timer = setTimeout(this.updateItems, this.options.refresh);
 		},
 
 		updateItems: function(){
-			//console.log("update!!");
+			//_.log("update!!");
 			var self = this;
 			// find the items
-			var scroll = $("body").scrollTop();
+			var scroll = $(window).scrollTop();
 			var height = window.innerHeight;
 			// the bounderies of the 'active' area
 
