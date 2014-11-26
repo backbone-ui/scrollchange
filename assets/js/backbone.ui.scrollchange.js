@@ -36,7 +36,7 @@
 		// default options
 		options: {
 			item : "li a",
-			containerEl: window, 
+			containerEl: window,
 			offset: 0,
 			refresh: 100,
 			className: "active",
@@ -80,8 +80,9 @@
 			$(this.options.item).each(function(){
 				var el = $(this).attr("data-target") || $(this).attr("href");
 				// get the position of the item target - use vanilla js instead?
-				//prerequisite
+				//prerequisites
 				if( el.substr(0,1) !== "#" ) return;
+				if( !$(el).length ) return;
 				var pos = $(el).offset().top;
 
 				if( min <= pos && max > pos ){
