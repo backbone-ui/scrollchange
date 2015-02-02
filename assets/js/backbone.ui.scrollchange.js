@@ -28,8 +28,8 @@
 }(function ($, _, Backbone) {
 
 	// support for Backbone APP() view if available...
-	var isAPP = ( typeof APP !== "undefined" && typeof APP.View !== "undefined" );
-	var View = ( isAPP ) ? APP.View : Backbone.View;
+	var isAPP = ( typeof APP !== "undefined" );
+	var View = ( isAPP && typeof APP.View !== "undefined" ) ? APP.View : Backbone.View;
 
 
 	var Scrollchange = View.extend({
