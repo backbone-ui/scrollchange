@@ -31,8 +31,15 @@
 	var isAPP = ( typeof APP !== "undefined" );
 	var View = ( isAPP && typeof APP.View !== "undefined" ) ? APP.View : Backbone.View;
 
+	// Shims
+	// parent inheritance from Backbone.APP
+	var parent=function(a,b){a=a||"",b=b||{},this.__inherit=this.__inherit||[];var c=this.__inherit[a]||this._parent||{},d=c.prototype||this.__proto__.constructor.__super__,e=d[a]||function(){delete this.__inherit[a]},f=b instanceof Array?b:[b];return this.__inherit[a]=d._parent||function(){},e.apply(this,f)};
+
 
 	var Scrollchange = View.extend({
+
+		name: "scrollchange",
+
 		// default options
 		options: {
 			item : "li a",
@@ -49,15 +56,18 @@
 
 		timer: false,
 
-		initialize: function(){
+		initialize: function( options ){
 			var self = this;
 			_.bindAll(this, "onScroll", "updateItems");
 			//window.addEventListener('scroll', _.bind(this.monitorScroll, this), false);
 			$( this.options.containerEl ).on('DOMMouseScroll mousewheel', this.onScroll );
 			// trigger onload
 			this.updateItems();
-			return View.prototype.initialize.apply(this, arguments );
+			//
+			return this.parent('initialize', options);
 		},
+
+		// Events
 
 		onScroll: function() {
 			//_.log("scroll!!");
@@ -96,7 +106,13 @@
 			// reset timer
 			clearTimeout(this.timer);
 			this.timer = false;
-		}
+		},
+
+		// Helpers
+
+		// call methods from the parent
+		parent: View.prototype.parent || parent,
+
 		// default render - may be overriden if postRender is included
 		/*
 		render: function(){
