@@ -28,7 +28,8 @@
 }(function ($, _, Backbone) {
 
 	// support for Backbone APP() view if available...
-	var isAPP = ( typeof APP !== "undefined" );
+	APP = APP || window.APP || null;
+	var isAPP = ( APP !== null );
 	var View = ( isAPP && typeof APP.View !== "undefined" ) ? APP.View : Backbone.View;
 
 	// Shims
@@ -60,7 +61,7 @@
 			var self = this;
 			_.bindAll(this, "onScroll", "updateItems");
 			//window.addEventListener('scroll', _.bind(this.monitorScroll, this), false);
-			$( this.options.containerEl ).on('DOMMouseScroll mousewheel', this.onScroll );
+			$( this.options.containerEl ).on('DOMMouseScroll mousewheel webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', this.onScroll );
 			// trigger onload
 			this.updateItems();
 			//
@@ -80,14 +81,14 @@
 			//_.log("update!!");
 			var self = this;
 			// find the items
-			var scroll = $(window).scrollTop();
+			var scroll = $(this.options.containerEl).scrollTop();
 			var height = window.innerHeight;
 			// the bounderies of the 'active' area
 
 			var min = scroll - (.5 * height ) + this.options.offset;
 			var max = scroll + (.5 * height ) + this.options.offset;
 
-			$(this.options.item).each(function(){
+			$(this.el).find(this.options.item).each(function(){
 				var el = $(this).attr("data-target") || $(this).attr("href");
 				// get the position of the item target - use vanilla js instead?
 				//prerequisites
