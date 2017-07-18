@@ -47,7 +47,7 @@
 			containerEl: window,
 			offset: 0,
 			refresh: 100,
-			className: "active",
+			activeClass: "active",
 			direction: "vertical"
 		},
 
@@ -97,10 +97,10 @@
 				var pos = $(el).offset().top;
 
 				if( min <= pos && max > pos ){
-					$(this).parent().addClass( self.options.className );
-					$(el).addClass( self.options.className ).siblings().removeClass( self.options.className );
+					$(this).parent().addClass( self.options.activeClass );
+					$(el).addClass( self.options.activeClass ).siblings().removeClass( self.options.activeClass );
 				} else {
-					$(this).parent().removeClass( self.options.className );
+					$(this).parent().removeClass( self.options.activeClass );
 				}
 
 			});
